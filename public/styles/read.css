@@ -1,0 +1,236 @@
+    .tiro-devanagari-hindi-regular {
+        font-family: "Tiro Devanagari Hindi", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
+    .montserrat{
+        font-family: "Montserrat", serif;
+        font-optical-sizing: auto;
+        font-weight: 498;
+        font-style: normal;
+    }
+
+    .yatra-one-regular {
+        color: black;
+        font-family: "Yatra One", serif;
+        font-weight: 300;
+        font-size: large;
+        font-style: normal;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        display: flex;
+        background-color: #f4f4f4;
+    }
+
+    /* Sidebar Menu */
+    .sidebar {
+        width: 250px;
+        background: #333;
+        color: white;
+        height: 100vh;
+        padding: 20px;
+        padding-top: 65px;
+        position: fixed;
+        overflow-y: auto;
+        transition: width 0.3s ease;
+    }
+
+    .sidebar h3{
+        background-color: #333;
+        position: fixed;
+        z-index: 1;
+        width: 220px;
+        top: 0px;
+        left: 0px;
+        text-align: center;
+        padding: 10px;
+        
+    }
+
+    /* Button Styling */
+    .sidebar button {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+    /* Button Hover Effect */
+    .sidebar button:hover {
+        background-color: rgb(23, 58, 186);
+        transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    
+    /* Add click animation effect */
+    .sidebar button:active {
+        transform: scale(0.95); /* Shrink slightly when clicked */
+    }
+    
+    /* Style for the clicked button */
+    .clicked {
+        background-color: green !important;
+    }
+    
+    /* Label Styling */
+    label {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        color: #333;
+    }
+
+    /* Base styling for select */
+    select {
+        appearance: none; /* Removes default styling */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #fff;
+        border: 2px solid #007bff; /* Primary blue border */
+        border-radius: 8px;
+        padding: 10px 15px;
+        font-size: 16px;
+        color: #333;
+        cursor: pointer;
+        outline: none;
+        width: 100%;
+        max-width: fit-content;
+        margin-bottom: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        transition: all 0.3s ease;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="%23007bff"><path d="M7 10l5 5 5-5z"></path></svg>');
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 20px;
+        padding-right: 40px;
+    }
+
+    /* Hover effect */
+    select:hover {
+        border-color: #0056b3;
+    }
+
+    /* Focus effect */
+    select:focus {
+        border-color: #0056b3;
+        box-shadow: 0 0 5px rgba(0, 91, 187, 0.5);
+    }
+
+    /* Disabled state */
+    select:disabled {
+        background-color: #f2f2f2;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    /* Main Content */
+
+    .section1{
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr 1fr;
+        justify-items: center;
+    }
+
+    .item1{
+        grid-column: 1/4;
+    }
+
+    .item2{
+        justify-self: start;
+        align-self: self-end;
+        margin-bottom: 5px;
+
+    }
+
+    .item4{
+        justify-self: end;
+        align-self: self-end;
+        margin-bottom: 5px;
+    }
+
+    .item2 button, .item4 button{
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .content {
+        margin-left: 270px;
+        padding: 20px;
+        width: 100%;
+        transition: margin-left 0.3s ease;
+    }
+
+    .collapsed + .content {
+        margin-left: 80px;
+    }
+
+    /* Verse Card */
+    .verse-card {
+        background: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: fadeIn 0.8s ease-in-out forwards;
+    }
+
+    .verse {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .translation, .explanation {
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .hindi {
+        background: #ffe5b4;
+        margin-bottom: 10px;
+    }
+
+    .english {
+        background: #d4edda;
+    }
+
+    .translator {
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+        font-size: 12px;
+        font-style: italic;
+        color: #555;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }

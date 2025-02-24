@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/favicon.svg">
+    <title>Shrimadbhagvadgita</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Outfit:wght@100..900&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/index.css">
+</head>
+<body>
+    <div class="blur circle-1"></div>
+    <div class="blur circle-2"></div>
+    <div class="blur circle-3"></div>
+    <div class="blur circle-4"></div>
+    <!-- navBar -->
+    <div class="navBar outfit">
+        <div class="brand baloo">' श्रीमद्भगवद्गीता '</div>
+        <div class="nav-items">
+            <div><button class="underline-effect">Home</button></a></div>
+            <div><button class="underline-effect">Explore</button></a></div>
+            <div><button class="underline-effect">About</button></a></div>
+            <div><button class="collapsed"><img src="/images/collapsed.svg" alt="collapsed"></button></div>
+        </div>
+    </div>
+
+    <!-- heroSection -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="outfit hero-text-primary">Where Every Verse <br> is a Reflection of <br> The Soul.</div>
+            <div class="hero-text-secondary rock-salt">Let Bhagvadgita illuminate your heart and guide your journey.</div>
+            <div class="buttons">
+                <form action="/read" method="post">
+                    <input type="hidden" name="chapter_number" value="1">
+                    <input type="hidden" name="verse_number" value="1">
+                    <button class="main-button outfit">READ NOW</button>
+                </form>
+                <button class="secondary-button outfit">CHAPTERS</button>
+            </div>
+        </div>
+        <div class="hero-image"><img src="/images/book.svg" alt="book"></div>
+    </div>
+
+    <!-- whyToRead -->
+     <section class="section-1">
+        <div class="head1"><u>WHY TO READ?</u></div>
+        <div class="head2">WHY SHOULD YOU READ BHAGAVAD GITA?</div>
+        <div class="item">
+            <div><img src="/images/why.svg" alt="why-pic"></div>
+            <div class="content">
+                <div class="reason">✅ Feeling Lost In Life’s Decisions?<br>
+                    → The Gita Provides Clarity. <br>
+                    ✅ Struggling With Stress & Anxiety? <br>
+                    → It Teaches Inner Peace. <br>
+                    ✅ Seeking Deeper Meaning? <br>
+                    → It Reveals Life’s Ultimate Purpose. <br>
+                    ✅ Want To Stay Motivated Without Fear Of Failure? <br>
+                    → Learn Selfless Action.
+                    <br><br>
+                    🔖 If You Answered ‘YES’ To Any Of These, It’s Time To Start <br> Reading!                
+                </div>
+                <div class="buttons">
+                    <form action="/read" method="post">
+                        <input type="hidden" name="chapter_number" value="1">
+                        <input type="hidden" name="verse_number" value="1">
+                        <button class="main-button outfit">READ NOW</button>
+                    </form>
+                    <button class="secondary-button outfit">TESTIMONIALS</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- verseOfTheMoment -->
+    <section class="section-2">
+        <div class="head1"><u>VERSE OF THE MOMENT</u></div>
+        <div class="head2">DISCOVER A RANDOM VERSE TO INSPIRE YOU</div>
+        <div class="item">
+            <div class="content">
+                <div class="shlok"><%= shlok %><hr></div>
+                <div class="summary"><% if (shlok.split('\n').length >= 4) { %><%= summary.split(" ").slice(0, 25).join(" ") + "..." %><span>more</span></p><% } else { %><%= summary %><% } %></div>
+                <div class="wisdom rock-salt">
+                    "Let divine wisdom guide your journey."
+                    <form action="/read" method="post">
+                        <div class="buttons">
+                            <button type="button" class="main-button outfit" onclick="location.reload();">REFRESH</button>
+                            <input type="hidden" name="chapter_number" value="<%= chapter %>">
+                            <input type="hidden" name="verse_number" value="<%= verse %>">
+                            <button type="submit" class="secondary-button outfit">ELABORATE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="random-image"><img src="/images/random.svg" alt="random-pic"></div>
+        </div>
+    </section>
+
+    <!-- testimonials -->
+    <section class="section-3">
+        <div class="head1"><u>TESTIMONIALS</u></div>
+        <div class="head2">SEE WHAT OTHERS HAVE TO SAY</div>
+        <div class="item">
+            <div class="card">
+                <div class="testimonial-image"><img src="/images/premanand.svg" alt="premanand"></div>
+                <div class="name"><u>SHRI PREMANAD MAHARAJ</u></div>
+                <div class="testimonial">"THE BHAGAVAD GITA OFFERS PROFOUND WISDOM FOR THE SOUL'S LIBERATION. IT TEACHES THE IMPORTANCE OF DISCERNING THE TRUTH BEHIND EVERY ACTION. BY FOLLOWING ITS GUIDANCE, ONE CAN ALIGN THEIR LIFE WITH DIVINE PURPOSE AND INNER PEACE."</div>
+            </div>
+            <div class="card">
+                <div class="testimonial-image"><img src="/images/vivekanand.svg" alt="premanand"></div>
+                <div class="name"><u>SWAMI VIVEKANAND</u></div>
+                <div class="testimonial">"THROUGH THE BHAGAVAD GITA, WE COME TO UNDERSTAND THE ESSENCE OF OUR TRUE SELF. IT INSPIRES COURAGE, DISCIPLINE, AND SELFLESS SERVICE TO THE GREATER GOOD. THE TEACHINGS OF THE GITA ENCOURAGE US TO AWAKEN OUR HIGHER POTENTIAL AND LIVE A LIFE OF PURPOSE."</div>
+            </div>
+            <div class="card">
+                <div class="testimonial-image"><img src="/images/adi-shankara.svg" alt="premanand"></div>
+                <div class="name"><u>ADI SHANKARACHARYA</u></div>
+                <div class="testimonial">"THE GITA UNVEILS THE ULTIMATE TRUTH OF THE UNITY BETWEEN THE INDIVIDUAL SOUL AND THE SUPREME. IT PROVIDES DEEP SPIRITUAL INSIGHT THAT HELPS TRANSCEND WORLDLY ATTACHMENTS. BY REALIZING THIS UNITY, ONE CAN ATTAIN LIBERATION AND ETERNAL BLISS."</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- areYouReady -->
+     <section class="section-4">
+        <div class="item1">ARE YOU READY?</div>
+        <div class="item2">"DISCOVER THE TIMELESS WISDOM OF THE BHAGAVAD GITA—A GUIDE TO LIFE, PURPOSE, AND INNER PEACE. DIVE INTO ITS TEACHINGS AND TRANSFORM YOUR PERSPECTIVE!"</div>
+        <div class="item3">
+            <form action="/read" method="post">
+                <input type="hidden" name="chapter_number" value="1">
+                <input type="hidden" name="verse_number" value="1">
+                <button class="main-button outfit">GET STARTED</button>
+            </form>
+        </div>
+     </section>
+
+     <!-- footer -->
+      <footer class="outfit">
+        <div>
+            <div class="brand baloo">' श्रीमद्भगवद्गीता '</div>
+            <div class="copyright">© 2025 <span class="baloo">' श्रीमद्भगवद्गीता ’</span> .All rights reserved.</div>
+        </div>
+        <div> 
+            <div class="footHead">Navigation Links</div>
+            <div class="footLink">
+                <div><a href="">Home</a></div>
+                <div><a href="">Explore</a></div>
+                <div><a href="">About</a></div>
+                <div><a href="">Learn More.</a></div>  
+            </div>
+        </div>
+        <div>
+            <div class="footHead">From Developer</div>
+            <div class="footLink">
+                <div class="links">
+                    <div><img src="/images/linkedin.svg" alt=""></div>
+                    <div><a href="">LinkedIn</a></div>
+                </div>
+                <div class="links">
+                    <div><img src="/images/github.svg" alt=""></div>
+                    <div><a href="">Github</a></div>
+                </div>
+                <div class="links">
+                    <div><img src="/images/x.svg" alt=""></div>
+                    <div><a href="">X (Twitter)</a></div>
+                </div>
+                <div class="links">
+                    <div><img src="/images/instagram.svg" alt=""></div>
+                    <div><a href="">Instagram</a></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div><u>‘Stay inspired! Keep working hard.’</u></div>
+        </div>
+    </footer>
+    <div class="footLine"></div>
+    
+
+    <script>
+
+    </script>
+</body>
+</html>
+
