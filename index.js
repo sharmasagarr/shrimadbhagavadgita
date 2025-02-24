@@ -68,6 +68,15 @@ app.post("/read", async (req, res) => {
     }
 });
 
+//keep-alive route
+app.get('/keepalive', (req, res) => {
+    res.send('Server is alive!');
+  });
+  
+  setInterval(() => {
+    http.get('https://shrimadbhagavadgita.onrender.com/keepalive');
+  }, 5 * 60 * 1000);
+
 app.listen(port, host, () => {
     console.log(`Server is running on port ${port}`);
 });

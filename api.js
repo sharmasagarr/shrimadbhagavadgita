@@ -64,6 +64,15 @@ app.get("/chapters/:id", async (req, res) => {
     }
 });
 
+//keep-alive route
+app.get('/keepalive', (req, res) => {
+    res.send('Server is alive!');
+  });
+  
+  setInterval(() => {
+    http.get('https://shrimadbhagavadgita-api.onrender.com/keepalive');
+  }, 5 * 60 * 1000);
+
 app.listen(port, host, () => {
     console.log(`API Server is running on port ${port}`);
 });
