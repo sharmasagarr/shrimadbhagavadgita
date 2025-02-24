@@ -71,7 +71,7 @@ app.get('/keepalive', (req, res) => {
   
   setInterval(() => {
     http.get('https://shrimadbhagavadgita-api.onrender.com/keepalive');
-  }, 5 * 60 * 1000);
+  }, 14 * 60 * 1000);
 
 app.listen(port, host, () => {
     console.log(`API Server is running on port ${port}`);
