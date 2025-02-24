@@ -4,7 +4,7 @@ import pg from "pg";
 import dotenv from "dotenv";
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 dotenv.config();
 
 app.use(bodyParser.urlencoded({ extended: true }));
