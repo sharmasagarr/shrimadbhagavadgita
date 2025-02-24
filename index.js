@@ -3,27 +3,32 @@ import bodyParser from "body-parser";
 import axios from "axios";
 import dotenv from "dotenv";
 
+dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 const host = '0.0.0.0';
-dotenv.config();
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // home route
 app.get("/", async (req, res) => {
-    const slokcount = [47, 72, 43, 42, 29, 47, 30, 28, 34, 42, 55, 20, 35, 27, 20, 24, 28, 78]
-    const randomChapter = Math.floor(Math.random()* 18) + 1;
-    const randomVerse = Math.floor(Math.random() * slokcount[randomChapter - 1]) + 1
+    try{
+        const slokcount = [47, 72, 43, 42, 29, 47, 30, 28, 34, 42, 55, 20, 35, 27, 20, 24, 28, 78]
+        const randomChapter = Math.floor(Math.random()* 18) + 1;
+        const randomVerse = Math.floor(Math.random() * slokcount[randomChapter - 1]) + 1
 
-    const result = await axios.get(process.env.API_URL + `/shlok/${randomChapter}/${randomVerse}`);
-    res.render("index.ejs", {
-        chapter: randomChapter,
-        verse: randomVerse,
-        shlok: result.data.slok,
-        summary: result.data.purohit.et
-    });
+        const result = await axios.get(process.env.API_URL + `/shlok/${randomChapter}/${randomVerse}`);
+        res.render("index.ejs", {
+            chapter: randomChapter,
+            verse: randomVerse,
+            shlok: result.data.slok,
+            summary: result.data.purohit.et
+        });
+    }
+    catch(error){
+        res.status(404).send(error.message);
+    }
 });
 
 // read route

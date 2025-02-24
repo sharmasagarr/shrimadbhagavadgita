@@ -3,10 +3,10 @@ import bodyParser from "body-parser";
 import pg from "pg";
 import dotenv from "dotenv";
 
+dotenv.config();
 const app = express();
 const port = process.env.PORT || 4000;
 const host = '0.0.0.0';
-dotenv.config();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
@@ -65,5 +65,5 @@ app.get("/chapters/:id", async (req, res) => {
 });
 
 app.listen(port, host, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`API Server is running on port ${port}`);
 });
