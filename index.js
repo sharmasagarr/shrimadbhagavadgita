@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 
 const app = express();
 const port = process.env.PORT || 3000;
+const host = '0.0.0.0';
 dotenv.config();
 
 app.use(express.static("public"));
@@ -62,6 +63,6 @@ app.post("/read", async (req, res) => {
     }
 });
 
-app.listen(port, () => {
+app.listen(port, host, () => {
     console.log(`Server is running on port ${port}`);
 });
