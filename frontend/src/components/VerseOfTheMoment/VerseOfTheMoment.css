@@ -1,0 +1,26 @@
+.section-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 21px;
+}
+
+.section-2 > .item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.section-2 > .item > .content{
+    display: grid;
+    grid-template: auto auto 1fr / auto;
+    justify-content: space-between;
+}
+
+.wisdom{
+    font-size: 16px;
+    letter-spacing: 3px;
+    align-self: end;
+    margin-bottom: 8px;
+}

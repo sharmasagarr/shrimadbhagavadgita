@@ -1,0 +1,22 @@
+/* fonts */
+.outfit{
+  font-family: "Outfit", serif;
+}
+.baloo {
+  font-family: "Baloo 2", serif;
+}
+.rock-salt {
+  font-family: "Rock Salt", serif;
+}
+
+/* body styling */
+body{
+  background-color: rgb(34, 34, 43);
+  color: white;
+  margin: 0;
+  padding-top: 50px;
+  padding-left: 167px;
+  padding-right: 167px;
+  position: relative;
+  overflow-x: hidden;
+}

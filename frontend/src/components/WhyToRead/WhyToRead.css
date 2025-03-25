@@ -1,0 +1,27 @@
+.section-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 21px;
+}
+
+.section-1 > .item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 550;
+    font-size: 17px;
+    line-height: 170%;
+    letter-spacing: 3px;
+}
+
+.section-1 > .item >.content{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.reason{
+    padding-top: 20px;
+}

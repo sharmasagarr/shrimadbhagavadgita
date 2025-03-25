@@ -1,0 +1,37 @@
+.section-4{
+    margin-top: 130px;
+    font-family: "Outfit", serif;
+    height: 500px;
+    border-radius: 50px;
+    background: rgb(49,201,198);
+    background: linear-gradient(270deg, rgba(49,201,198,1) 0%, rgba(117,195,219,1) 46%, rgba(0,169,221,1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.section-4 > .item1{
+    padding-top: 25px;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: black;
+}
+
+.section-4 > .item2{
+    padding: 0px 140px;
+    font-weight: 550;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+.section-4 > .item3{
+    padding-bottom: 25px;
+}
+
+.section-4 > .item3 > form > button{
+    padding: 23px 65px;
+    background-color: #000000;
+}

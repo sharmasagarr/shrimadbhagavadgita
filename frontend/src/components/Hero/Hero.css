@@ -1,0 +1,27 @@
+.hero{
+    margin-top: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: top;
+    gap: 20px;
+}
+
+.hero-text-primary{
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: 4.8px;
+}
+
+.hero-text-secondary{
+    width: 420px;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 15%;
+}
